@@ -21,7 +21,7 @@ class ImageControl {
           const imageheight = (e.target as HTMLImageElement).height;
           const w = imageWith > this.width ? Math.abs(imageWith - this.width) : this.width;
           const h = imageheight > this.height ? Math.abs(imageheight - this.height) : this.height;
-          this.context.drawImage(this.image, w, h);
+          this.context.drawImage(this.image, w, h, this.canvas.width, this.canvas.height);
           const dataUrl = this.context.canvas.toDataURL();
           resolve(dataUrl);
         } catch (error) {
